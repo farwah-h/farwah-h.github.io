@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farwah Hamid</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --bg:       #080c18;
+  --bg1:      #0d1225;
+  --bg2:      #111830;
+  --bg3:      #16203c;
+  --line:     rgba(100,130,220,0.15);
+  --line2:    rgba(100,130,220,0.25);
+  --blue:     #6b9aff;
+  --blue2:    #4a7de8;
+  --blue-dim: rgba(107,154,255,0.12);
+  --slate:    #8fa8d8;
+  --slate2:   #b8caed;
+  --muted:    #5a72a8;
+  --muted2:   #7a96cc;
+  --txt:      #dce6f8;
+  --txt2:     #9bb0d8;
+  --txt3:     #6a84b8;
+  --white:    #f0f4ff;
+  --display:  'Bebas Neue', sans-serif;
+  --serif:    'DM Serif Display', serif;
+  --mono:     'IBM Plex Mono', monospace;
+  --inter:    'Inter', sans-serif;
+}
+
+body { background: var(--bg); color: var(--txt); font-family: var(--inter); font-size: 15px; line-height: 1.6; overflow-x: hidden; }
+
+/* ── GRID TEXTURE ── */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(107,154,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(107,154,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ── GLOW ORBS ── */
+.orb {
+  position: fixed; border-radius: 50%; pointer-events: none; z-index: 0;
+  filter: blur(120px);
+}
+.orb1 { width: 600px; height: 600px; top: -200px; right: -100px; background: rgba(74,125,232,0.12); }
+.orb2 { width: 400px; height: 400px; bottom: 10%; left: -100px; background: rgba(107,154,255,0.07); }
+
+main { position: relative; z-index: 1; }
+
+/* ─────────────────── NAV ─────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 3rem;
+  background: rgba(8,12,24,0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-logo {
+  font-family: var(--mono); font-size: 13px; color: var(--blue);
+  text-decoration: none; letter-spacing: 0.04em;
+  display: flex; align-items: center; gap: 8px;
+}
+.nav-logo::before {
+  content: ''; width: 8px; height: 8px; background: var(--blue);
+  border-radius: 50%; animation: blink 2.5s ease-in-out infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+.nav-links { display: flex; list-style: none; }
+.nav-links a {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--txt3); text-decoration: none;
+  padding: 0 1rem; height: 56px; display: flex; align-items: center;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--txt); }
+.nav-tag {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em;
+  color: var(--blue); background: var(--blue-dim);
+  border: 1px solid rgba(107,154,255,0.3);
+  padding: 5px 14px;
+}
+
+/* ─────────────────── HERO ─────────────────── */
+#hero {
+  min-height: 100vh;
+  padding-top: 56px;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+}
+
+.hero-left {
+  padding: 5rem 4rem 4rem;
+  border-right: 1px solid var(--line);
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+
+.hero-index {
+  font-family: var(--mono); font-size: 10px; color: var(--muted);
+  letter-spacing: 0.2em; text-transform: uppercase;
+  display: flex; align-items: center; gap: 12px; margin-bottom: 3.5rem;
+}
+.hero-index::after { content: ''; flex: 1; height: 1px; background: var(--line2); max-width: 200px; }
+
+.hero-name {
+  font-family: var(--display); font-weight: 400;
+  font-size: clamp(5.5rem, 10vw, 10rem);
+  line-height: 0.88; letter-spacing: 0.05em;
+  color: var(--white); margin-bottom: 2rem;
+}
+.hero-name .dim { color: var(--muted2); }
+.hero-name .hi  { color: var(--blue); }
+
+.hero-role {
+  font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--slate);
+  display: flex; align-items: center; gap: 10px; margin-bottom: 2rem;
+}
+.hero-role span { color: var(--muted); }
+
+.hero-bio {
+  font-size: 15px; color: var(--txt2); line-height: 1.85;
+  max-width: 520px; margin-bottom: 3rem;
+  border-left: 2px solid var(--blue2); padding-left: 1.25rem;
+}
+
+.hero-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em;
+  text-transform: uppercase; padding: 13px 26px; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px; transition: all .2s;
+  cursor: pointer; border: none; font-family: var(--mono);
+}
+.btn-primary { background: var(--blue); color: var(--bg); }
+.btn-primary:hover { background: #85b0ff; }
+.btn-ghost { background: transparent; color: var(--slate2); border: 1px solid var(--line2); }
+.btn-ghost:hover { border-color: var(--blue); color: var(--blue); }
+
+/* hero right — stat panels */
+.hero-right {
+  display: flex; flex-direction: column;
+}
+.stat-panel {
+  flex: 1; padding: 2rem 2rem;
+  border-bottom: 1px solid var(--line);
+  display: flex; flex-direction: column; justify-content: center;
+}
+.stat-panel:last-child { border-bottom: none; }
+.sp-label {
+  font-family: var(--mono); font-size: 9px; color: var(--muted);
+  letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 10px;
+}
+.sp-val {
+  font-family: var(--display); font-size: 3.2rem; font-weight: 800;
+  color: var(--white); line-height: 1;
+}
+.sp-val.accent { color: var(--blue); }
+.sp-sub { font-size: 12px; color: var(--txt3); margin-top: 5px; }
+.sp-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.sp-tag {
+  font-family: var(--mono); font-size: 10px; padding: 4px 11px;
+  border: 1px solid var(--line2); color: var(--slate2); letter-spacing: 0.03em;
+  transition: all .2s;
+}
+.sp-tag.lit { background: var(--blue-dim); border-color: rgba(107,154,255,0.35); color: var(--blue); }
+
+/* ─────────────────── SECTION LAYOUT ─────────────────── */
+.sec { border-top: 1px solid var(--line); }
+.sec-grid { display: grid; grid-template-columns: 220px 1fr; }
+.sec-side {
+  padding: 3.5rem 2.5rem;
+  border-right: 1px solid var(--line);
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.sec-side-top { display: flex; flex-direction: column; gap: 1rem; }
+.sec-num { font-family: var(--mono); font-size: 10px; color: var(--muted); letter-spacing: 0.15em; }
+.sec-heading {
+  font-family: var(--serif); font-size: 1.8rem; font-weight: 800;
+  color: var(--white); line-height: 1.05;
+}
+.sec-heading em { font-style: italic; color: var(--blue); }
+.sec-note { font-family: var(--mono); font-size: 10px; color: var(--txt3); line-height: 1.6; margin-top: .5rem; }
+.sec-body { padding: 3.5rem; }
+
+/* ─────────────────── ABOUT ─────────────────── */
+.about-layout { display: grid; grid-template-columns: 1fr 260px; gap: 3.5rem; }
+.about-text p { color: var(--txt2); line-height: 1.9; margin-bottom: 1.1rem; font-size: 15px; }
+.about-text p:last-child { margin-bottom: 0; }
+.about-facts { display: flex; flex-direction: column; gap: 1px; }
+.fact {
+  background: var(--bg2); border: 1px solid var(--line);
+  padding: 1.1rem 1.25rem; margin-bottom: 1px;
+}
+.fact-label { font-family: var(--mono); font-size: 9px; color: var(--muted); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 5px; }
+.fact-val { font-family: var(--serif); font-size: 1rem; font-weight: 700; color: var(--txt); }
+.fact-val.blue { color: var(--blue); }
+.fact-sub { font-size: 12px; color: var(--txt3); margin-top: 3px; }
+
+/* ─────────────────── EXPERIENCE ─────────────────── */
+.exp-entry { padding: 2.5rem 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 200px 1fr; gap: 2.5rem; }
+.exp-entry:first-child { border-top: none; padding-top: 0; }
+.exp-when { font-family: var(--mono); font-size: 11px; color: var(--blue); margin-bottom: 4px; }
+.exp-where { font-size: 12px; color: var(--txt3); }
+.exp-role { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; color: var(--white); margin-bottom: 1rem; line-height: 1.2; }
+.exp-pts { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+.exp-pts li { font-size: 14px; color: var(--txt2); padding-left: 1.25rem; position: relative; line-height: 1.65; }
+.exp-pts li::before { content: '▸'; position: absolute; left: 0; color: var(--blue); font-size: 9px; top: 5px; }
+
+/* ─────────────────── PROJECTS ─────────────────── */
+
+/* FYP HERO CARD */
+.proj-hero {
+  display: grid; grid-template-columns: 1fr 280px;
+  background: var(--bg1); border: 1px solid var(--line2);
+  margin-bottom: 2px; position: relative; overflow: hidden;
+}
+.proj-hero::before {
+  content: 'FYP';
+  position: absolute; right: -10px; top: -10px;
+  font-family: var(--serif); font-size: 6rem; font-weight: 800;
+  color: rgba(107,154,255,0.05); line-height: 1; pointer-events: none;
+}
+.proj-hero-body { padding: 2.5rem; border-right: 1px solid var(--line); }
+.proj-hero-meta { padding: 2.5rem; display: flex; flex-direction: column; gap: 2rem; }
+.proj-idx { font-family: var(--mono); font-size: 9px; color: var(--muted); letter-spacing: 0.15em; margin-bottom: 8px; }
+.proj-badge {
+  display: inline-block; font-family: var(--mono); font-size: 9px;
+  letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 12px;
+  margin-bottom: 14px;
+}
+.badge-red  { background: rgba(255,100,120,0.12); border: 1px solid rgba(255,100,120,0.3); color: #ff8fa0; }
+.badge-blue { background: var(--blue-dim); border: 1px solid rgba(107,154,255,0.3); color: var(--blue); }
+.badge-amb  { background: rgba(240,175,60,0.1); border: 1px solid rgba(240,175,60,0.25); color: #f0c060; }
+.badge-dim  { background: rgba(255,255,255,0.05); border: 1px solid var(--line); color: var(--txt3); }
+.proj-title { font-family: var(--serif); font-size: 1.7rem; font-weight: 800; color: var(--white); line-height: 1.1; margin-bottom: 12px; }
+.proj-title em { font-style: italic; color: var(--blue); }
+.proj-desc { font-size: 13.5px; color: var(--txt2); line-height: 1.8; margin-bottom: 1.5rem; }
+.proj-stack { display: flex; flex-wrap: wrap; gap: 6px; }
+.stk { font-family: var(--mono); font-size: 10px; padding: 4px 11px; background: rgba(255,255,255,0.04); border: 1px solid var(--line); color: var(--txt3); }
+.proj-link { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; border-bottom: 1px solid rgba(107,154,255,0.35); padding-bottom: 2px; transition: gap .2s; }
+.proj-link:hover { gap: 10px; }
+.meta-label { font-family: var(--mono); font-size: 9px; color: var(--muted); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 8px; }
+.meta-val { font-family: var(--serif); font-size: 1.5rem; font-weight: 800; color: var(--blue); line-height: 1; }
+.meta-sub { font-size: 11px; color: var(--txt3); margin-top: 4px; }
+
+/* HORIZONTAL SCROLL PROJECTS STRIP */
+.proj-strip-wrap { overflow-x: auto; display: flex; gap: 0; border: 1px solid var(--line); border-top: none; scrollbar-width: thin; scrollbar-color: var(--line2) transparent; }
+.proj-card {
+  min-width: 260px; flex: 1;
+  background: var(--bg1); padding: 1.75rem;
+  border-right: 1px solid var(--line);
+  transition: background .2s; position: relative;
+}
+.proj-card:last-child { border-right: none; }
+.proj-card:hover { background: var(--bg2); }
+.proj-card::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 2px; background: transparent; transition: background .2s;
+}
+.proj-card:hover::after { background: var(--blue); }
+.pc-num { font-family: var(--mono); font-size: 9px; color: var(--muted); margin-bottom: 6px; }
+.pc-title { font-family: var(--serif); font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 8px; line-height: 1.25; }
+.pc-desc { font-size: 12px; color: var(--txt2); line-height: 1.65; margin-bottom: 14px; }
+.pc-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 12px; }
+.pc-tag { font-family: var(--mono); font-size: 9px; padding: 3px 8px; background: var(--bg3); border: 1px solid var(--line); color: var(--txt3); }
+
+/* ─────────────────── SKILLS ─────────────────── */
+.skills-outer { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--line); }
+.skill-group { padding: 2rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.skill-group:nth-child(2n) { border-right: none; }
+.skill-group:nth-last-child(-n+2) { border-bottom: none; }
+.sg-title { font-family: var(--serif); font-size: .95rem; font-weight: 700; color: var(--slate2); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 8px; }
+.sg-title::before { content: ''; width: 10px; height: 2px; background: var(--blue); flex-shrink: 0; }
+.sg-row { display: flex; align-items: center; gap: 10px; padding: 7px 0; border-bottom: 1px solid rgba(100,130,220,0.07); }
+.sg-row:last-child { border-bottom: none; }
+.sg-name { font-size: 13px; color: var(--txt2); flex: 1; }
+.sg-bar { width: 72px; height: 2px; background: rgba(255,255,255,0.07); flex-shrink: 0; }
+.sg-fill { height: 100%; background: var(--blue2); }
+.sg-fill.amb { background: #c8a040; }
+.sg-fill.red { background: #d06070; }
+
+/* ─────────────────── CERTIFICATIONS ─────────────────── */
+.cert-wrap { display: flex; flex-direction: column; gap: 0; }
+.cert-row {
+  display: grid; grid-template-columns: 160px 1fr;
+  padding: 2rem 0; border-top: 1px solid var(--line);
+  gap: 2.5rem; align-items: start;
+}
+.cert-row:first-child { border-top: none; padding-top: 0; }
+.cert-issuer { font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; }
+.cert-year { font-family: var(--mono); font-size: 10px; color: var(--muted); margin-top: 6px; }
+.cert-name { font-family: var(--serif); font-size: 1.05rem; font-weight: 700; color: var(--white); margin-bottom: 6px; line-height: 1.3; }
+.cert-desc { font-size: 13px; color: var(--txt2); line-height: 1.65; }
+
+/* ─────────────────── CONTACT ─────────────────── */
+.contact-layout { display: grid; grid-template-columns: 1fr 360px; gap: 0; }
+.contact-main { padding-right: 4rem; border-right: 1px solid var(--line); }
+.contact-giant {
+  font-family: var(--display); font-size: clamp(3rem,6vw,5.5rem);
+  font-weight: 800; line-height: 0.9; color: var(--white); margin-bottom: 2rem;
+}
+.contact-giant em { font-style: italic; color: var(--blue); }
+.contact-sub { font-size: 15px; color: var(--txt2); line-height: 1.85; margin-bottom: 2.5rem; max-width: 400px; }
+.clinks { padding-left: 3rem; display: flex; flex-direction: column; gap: 0; }
+.clink {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 1.5rem 0; border-bottom: 1px solid var(--line);
+  text-decoration: none; color: var(--txt); transition: color .2s;
+}
+.clink:last-child { border-bottom: none; }
+.clink:hover { color: var(--blue); }
+.clink-box {
+  width: 38px; height: 38px; border: 1px solid var(--line2);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 11px; color: var(--txt3);
+  flex-shrink: 0; transition: all .2s;
+}
+.clink:hover .clink-box { border-color: var(--blue); color: var(--blue); }
+.clink-lbl { font-family: var(--mono); font-size: 9px; color: var(--muted); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 3px; }
+.clink-val { font-size: 13px; }
+.clink-arr { margin-left: auto; color: var(--muted); font-size: 18px; transition: all .2s; }
+.clink:hover .clink-arr { color: var(--blue); transform: translate(2px,-2px); }
+
+/* ─────────────────── FOOTER ─────────────────── */
+footer {
+  border-top: 1px solid var(--line);
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.5rem 3rem; position: relative; z-index: 1;
+}
+footer span { font-family: var(--mono); font-size: 10px; color: var(--txt3); letter-spacing: 0.06em; }
+footer .accent { color: var(--blue); }
+
+/* ─────────────────── RESPONSIVE ─────────────────── */
+@media (max-width: 900px) {
+  #hero { grid-template-columns: 1fr; }
+  .hero-right { border-top: 1px solid var(--line); flex-direction: row; flex-wrap: wrap; }
+  .stat-panel { flex: 1 1 50%; border-right: 1px solid var(--line); }
+  .sec-grid { grid-template-columns: 1fr; }
+  .sec-side { border-right: none; border-bottom: 1px solid var(--line); padding: 2rem; }
+  .sec-body { padding: 2rem; }
+  .about-layout { grid-template-columns: 1fr; }
+  .proj-hero { grid-template-columns: 1fr; }
+  .proj-hero-body { border-right: none; border-bottom: 1px solid var(--line); }
+  .skills-outer { grid-template-columns: 1fr; }
+  .skill-group { border-right: none; border-bottom: 1px solid var(--line); }
+  .skill-group:nth-last-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .skill-group:last-child { border-bottom: none; }
+  .contact-layout { grid-template-columns: 1fr; }
+  .contact-main { border-right: none; padding-right: 0; }
+  .clinks { padding-left: 0; padding-top: 2rem; }
+  .cert-row { grid-template-columns: 1fr; gap: .5rem; }
+  .exp-entry { grid-template-columns: 1fr; gap: .5rem; }
+  nav { padding: 0 1.25rem; }
+  .nav-links { display: none; }
+  .hero-left { padding: 3rem 1.5rem; }
+  footer { padding: 1.25rem; }
+}
+</style>
+</head>
+<body>
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+
+<nav>
+  <a class="nav-logo" href="#">farwah.hamid</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <span class="nav-tag">Available for hire</span>
+</nav>
+
+<main>
+
+<!-- ══════════════════ HERO ══════════════════ -->
+<section id="hero">
+  <div class="hero-left">
+    <div>
+      <div class="hero-index">Islamabad, PK — BS Cyber Security, 2022–Present</div>
+      <h1 class="hero-name">
+        <span class="dim">FAR</span><span class="hi">WAH</span><br>
+        <span class="dim">HA</span>MID
+      </h1>
+      <div class="hero-role">
+        Cybersecurity &amp; AI <span>/</span> Network Security <span>/</span> Adversarial ML
+      </div>
+    </div>
+    <div>
+      <p class="hero-bio">
+        Final-year cybersecurity student building at the edge of security and AI — from low-level network forensics and malware analysis to training neural networks that resist adversarial attacks. My FYP merges computer vision with threat modeling.
+      </p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn btn-primary">View projects →</a>
+        <a href="https://github.com/farwah-h" target="_blank" class="btn btn-ghost">GitHub ↗</a>
+        <a href="#contact" class="btn btn-ghost">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="stat-panel">
+      <div class="sp-label">CGPA</div>
+      <div class="sp-val accent">3.55</div>
+      <div class="sp-sub">Bachelor of Science in Cyber Security</div>
+    </div>
+    <div class="stat-panel">
+      <div class="sp-label">Projects built</div>
+      <div class="sp-val">08</div>
+      <div class="sp-sub">Across security, AI &amp; systems</div>
+    </div>
+    <div class="stat-panel">
+      <div class="sp-label">Focus areas</div>
+      <div class="sp-tags">
+        <span class="sp-tag lit">Network Security</span>
+        <span class="sp-tag lit">Adversarial AI</span>
+        <span class="sp-tag lit">Digital Forensics</span>
+        <span class="sp-tag">Deep Learning</span>
+        <span class="sp-tag">Malware Analysis</span>
+        <span class="sp-tag">DevSecOps</span>
+        <span class="sp-tag">Computer Vision</span>
+        <span class="sp-tag">x86 Assembly</span>
+      </div>
+    </div>
+    <div class="stat-panel">
+      <div class="sp-label">Links</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <a href="https://github.com/farwah-h" target="_blank" style="font-family:var(--mono);font-size:11px;color:var(--slate2);text-decoration:none;display:flex;justify-content:space-between;align-items:center">github.com/farwah-h <span style="color:var(--blue)">↗</span></a>
+        <a href="https://linkedin.com/in/farwah-hamid" target="_blank" style="font-family:var(--mono);font-size:11px;color:var(--slate2);text-decoration:none;display:flex;justify-content:space-between;align-items:center">linkedin.com/in/farwah-hamid <span style="color:var(--blue)">↗</span></a>
+        <a href="mailto:farwah.hamid21@gmail.com" style="font-family:var(--mono);font-size:11px;color:var(--slate2);text-decoration:none;display:flex;justify-content:space-between;align-items:center">farwah.hamid21@gmail.com <span style="color:var(--blue)">↗</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ ABOUT ══════════════════ -->
+<section id="about" class="sec">
+  <div class="sec-grid">
+    <div class="sec-side">
+      <div class="sec-side-top">
+        <div class="sec-num">01 — About</div>
+        <div class="sec-heading">Who<br>I <em>am</em></div>
+        <div class="sec-note">COMSATS University<br>Islamabad · 2022–Present</div>
+      </div>
+    </div>
+    <div class="sec-body">
+      <div class="about-layout">
+        <div class="about-text">
+          <p>I'm a final-year Cybersecurity student at COMSATS University Islamabad, building across both the offensive and defensive sides of security. My work ranges from low-level assembly programming and network packet forensics to training deep neural networks against adversarial inputs.</p>
+          <p>At NECOP's Information Security Lab I performed authorised penetration testing on real enterprise infrastructure — identifying misconfigurations in routers and switches, running service enumeration, and deploying a pfSense firewall from scratch under real conditions.</p>
+          <p>My final year project, PhantomNet++, sits at an unusual intersection: using explainable AI and CNNs to simulate and detect physical adversarial attacks on vision models. It's the kind of problem that matters more as AI gets embedded in security-critical systems.</p>
+          <p>I like working where things don't usually connect — security and ML, low-level systems and high-level reasoning, offense and defense.</p>
+        </div>
+        <div class="about-facts">
+          <div class="fact">
+            <div class="fact-label">Degree</div>
+            <div class="fact-val">BS Cyber Security</div>
+            <div class="fact-sub">COMSATS · 2022–Present</div>
+          </div>
+          <div class="fact">
+            <div class="fact-label">CGPA</div>
+            <div class="fact-val blue">3.55 / 4.0</div>
+          </div>
+          <div class="fact">
+            <div class="fact-label">Prior education</div>
+            <div class="fact-val" style="font-size:.9rem">KIPS College for Girls</div>
+            <div class="fact-sub">Pre-Engineering · 76% · 2020–22</div>
+            <div class="fact-val" style="font-size:.9rem;margin-top:8px">Sir Syed Public School</div>
+            <div class="fact-sub">Science · 94% · 2018–20</div>
+          </div>
+          <div class="fact">
+            <div class="fact-label">Location</div>
+            <div class="fact-val">Islamabad, Pakistan</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ EXPERIENCE ══════════════════ -->
+<section id="experience" class="sec">
+  <div class="sec-grid">
+    <div class="sec-side">
+      <div class="sec-side-top">
+        <div class="sec-num">02 — Experience</div>
+        <div class="sec-heading">Where<br>I've <em>worked</em></div>
+      </div>
+    </div>
+    <div class="sec-body">
+      <div class="exp-entry">
+        <div>
+          <div class="exp-when">Jul – Sep 2025</div>
+          <div class="exp-where">National Electronics<br>Complex of Pakistan<br>(NECOP)</div>
+        </div>
+        <div>
+          <div class="exp-role">Network Security Intern — Information Security Lab</div>
+          <ul class="exp-pts">
+            <li>Performed authorised penetration testing on enterprise network devices — routers and switches — identifying real misconfigurations and security weaknesses.</li>
+            <li>Conducted network reconnaissance and service enumeration to map device exposure and attack surfaces in controlled environments.</li>
+            <li>Configured and deployed a pfSense firewall, implementing rules and network security policies from scratch.</li>
+            <li>Documented findings and validated device configurations against security requirements.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ PROJECTS ══════════════════ -->
+<section id="projects" class="sec">
+  <div class="sec-grid">
+    <div class="sec-side">
+      <div class="sec-side-top">
+        <div class="sec-num">03 — Projects</div>
+        <div class="sec-heading">Things<br>I've <em>built</em></div>
+        <div class="sec-note">8 projects across<br>security, AI &amp; systems</div>
+      </div>
+    </div>
+    <div class="sec-body" style="padding:0">
+
+      <!-- FYP HERO -->
+      <div class="proj-hero">
+        <div class="proj-hero-body">
+          <div class="proj-idx">01 · Featured · Final Year Project</div>
+          <span class="proj-badge badge-red">Adversarial AI</span>
+          <div class="proj-title"><em>PhantomNet++</em><br>Adversarial Attack Detection &amp; Defense</div>
+          <p class="proj-desc">Framework to simulate and detect physical adversarial attacks on computer vision models. Trained DNNs and CNNs on manipulated inputs, applied explainable AI to visualise model vulnerabilities, and worked on hardening decisions against real-world perturbations — where cybersecurity meets ML.</p>
+          <div class="proj-stack" style="margin-bottom:1.5rem">
+            <span class="stk">PyTorch</span><span class="stk">CNNs / DNNs</span>
+            <span class="stk">Adversarial ML</span><span class="stk">XAI</span>
+            <span class="stk">Computer Vision</span><span class="stk">Python</span>
+          </div>
+        </div>
+        <div class="proj-hero-meta">
+          <div>
+            <div class="meta-label">Type</div>
+            <div class="meta-val">FYP</div>
+            <div class="meta-sub">Final Year Project</div>
+          </div>
+          <div>
+            <div class="meta-label">Domain bridge</div>
+            <div style="display:flex;flex-direction:column;gap:6px;margin-top:4px">
+              <span class="proj-badge badge-red" style="margin-bottom:0">Cybersecurity</span>
+              <span class="proj-badge badge-amb" style="margin-bottom:0">Computer Vision</span>
+              <span class="proj-badge badge-blue" style="margin-bottom:0">Explainable AI</span>
+            </div>
+          </div>
+          <div>
+            <div class="meta-label">Why it matters</div>
+            <p style="font-size:12px;color:var(--txt3);line-height:1.7">As AI gets deployed in security-critical contexts, adversarial robustness becomes a defense problem — not just an ML one.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCROLLABLE STRIP -->
+      <div class="proj-strip-wrap">
+        <div class="proj-card">
+          <div class="pc-num">02</div>
+          <span class="proj-badge badge-amb">Deep Learning</span>
+          <div class="pc-title">Autoencoder for Image Reconstruction</div>
+          <p class="pc-desc">Deep autoencoder on Tiny ImageNet with PyTorch. Custom pipeline + pretrained VGG16 as perceptual feature extractor for reconstruction quality.</p>
+          <div class="pc-tags"><span class="pc-tag">PyTorch</span><span class="pc-tag">VGG16</span><span class="pc-tag">Autoencoders</span></div>
+          <a href="https://github.com/farwah-h/Autoencoder-for-image-reconstruction" target="_blank" class="proj-link">github ↗</a>
+        </div>
+        <div class="proj-card">
+          <div class="pc-num">03</div>
+          <span class="proj-badge badge-blue">Network Security</span>
+          <div class="pc-title">Intelligent Packet Analysis Tool</div>
+          <p class="pc-desc">Analyses pcap files, reconstructs conversations, detects ARP spoofing, DDoS, SQL injection, and port scanning threats in real traffic.</p>
+          <div class="pc-tags"><span class="pc-tag">Python</span><span class="pc-tag">Wireshark</span><span class="pc-tag">PCAP</span></div>
+          <a href="https://github.com/farwah-h/Packet-Analysis-Tool" target="_blank" class="proj-link">github ↗</a>
+        </div>
+        <div class="proj-card">
+          <div class="pc-num">04</div>
+          <span class="proj-badge badge-red">DevSecOps</span>
+          <div class="pc-title">ML-Based Network Malware Detection</div>
+          <p class="pc-desc">Random Forest classifier on network traffic, packaged in Docker with a 3-stage Jenkins CI/CD pipeline and Docker Hub integration.</p>
+          <div class="pc-tags"><span class="pc-tag">Random Forest</span><span class="pc-tag">Docker</span><span class="pc-tag">Jenkins</span></div>
+          <a href="https://github.com/farwah-h/ML-Based-Network-Malware-Detection-System" target="_blank" class="proj-link">github ↗</a>
+        </div>
+        <div class="proj-card">
+          <div class="pc-num">05</div>
+          <span class="proj-badge badge-blue">Digital Forensics</span>
+          <div class="pc-title">Windows &amp; Kali Linux Forensics</div>
+          <p class="pc-desc">Full forensic investigation of disk images, memory, and network traffic using Autopsy, Wireshark, and Velociraptor.</p>
+          <div class="pc-tags"><span class="pc-tag">Autopsy</span><span class="pc-tag">Velociraptor</span><span class="pc-tag">Wireshark</span></div>
+          <a href="https://github.com/farwah-h/Digital-Forensics" target="_blank" class="proj-link">github ↗</a>
+        </div>
+        <div class="proj-card">
+          <div class="pc-num">06</div>
+          <span class="proj-badge badge-amb">DevOps</span>
+          <div class="pc-title">Flask CI/CD — Unit &amp; Selenium Testing</div>
+          <p class="pc-desc">Flask + MySQL app with five-stage Jenkins pipeline: lint → build → pytest → deploy → Selenium end-to-end tests in headless Chrome.</p>
+          <div class="pc-tags"><span class="pc-tag">Flask</span><span class="pc-tag">Jenkins</span><span class="pc-tag">Selenium</span></div>
+          <a href="https://github.com/farwah-h/CI-CD-Pipeline-with-Unit-Selenium-Testing" target="_blank" class="proj-link">github ↗</a>
+        </div>
+        <div class="proj-card">
+          <div class="pc-num">07</div>
+          <span class="proj-badge badge-amb">DevOps · K8s</span>
+          <div class="pc-title">Flask App with Kubernetes Deployment</div>
+          <p class="pc-desc">Jenkins auto-deploys to Minikube with full K8s manifests — Deployments, NodePort, PVCs, ConfigMaps, and health probes.</p>
+          <div class="pc-tags"><span class="pc-tag">Kubernetes</span><span class="pc-tag">Minikube</span><span class="pc-tag">Docker</span></div>
+          <a href="https://github.com/farwah-h/DevOps-Final-Flask-CICD" target="_blank" class="proj-link">github ↗</a>
+        </div>
+        <div class="proj-card">
+          <div class="pc-num">08</div>
+          <span class="proj-badge badge-dim">Low-Level Systems</span>
+          <div class="pc-title">OS Shell in x86 Assembly</div>
+          <p class="pc-desc">Custom CLI shell in x86 Assembly — input handling, command parsing, execution via direct system calls and memory management.</p>
+          <div class="pc-tags"><span class="pc-tag">x86 Assembly</span><span class="pc-tag">OS Internals</span><span class="pc-tag">Syscalls</span></div>
+          <a href="https://github.com/farwah-h/OSShell-assembly" target="_blank" class="proj-link">github ↗</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ SKILLS ══════════════════ -->
+<section id="skills" class="sec">
+  <div class="sec-grid">
+    <div class="sec-side">
+      <div class="sec-side-top">
+        <div class="sec-num">04 — Skills</div>
+        <div class="sec-heading">What<br>I <em>know</em></div>
+      </div>
+    </div>
+    <div class="sec-body">
+      <div class="skills-outer">
+        <div class="skill-group">
+          <div class="sg-title">Network Security</div>
+          <div class="sg-row"><span class="sg-name">Nmap — Recon &amp; Enumeration</span><div class="sg-bar"><div class="sg-fill" style="width:85%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">Wireshark — Packet Analysis</span><div class="sg-bar"><div class="sg-fill" style="width:82%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">pfSense — Firewall Config</span><div class="sg-bar"><div class="sg-fill" style="width:75%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">Burp Suite / OWASP</span><div class="sg-bar"><div class="sg-fill" style="width:65%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">Metasploit — Exploitation</span><div class="sg-bar"><div class="sg-fill" style="width:60%"></div></div></div>
+        </div>
+        <div class="skill-group">
+          <div class="sg-title">AI &amp; Machine Learning</div>
+          <div class="sg-row"><span class="sg-name">Deep Learning (CNNs, DNNs, Autoencoders)</span><div class="sg-bar"><div class="sg-fill amb" style="width:80%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">Computer Vision &amp; Image Processing</span><div class="sg-bar"><div class="sg-fill amb" style="width:75%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">Adversarial AI &amp; XAI</span><div class="sg-bar"><div class="sg-fill amb" style="width:72%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">Supervised / Unsupervised Learning</span><div class="sg-bar"><div class="sg-fill amb" style="width:78%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">PyTorch · VGG16 · Scikit-learn</span><div class="sg-bar"><div class="sg-fill amb" style="width:70%"></div></div></div>
+        </div>
+        <div class="skill-group">
+          <div class="sg-title">Digital Forensics &amp; Malware</div>
+          <div class="sg-row"><span class="sg-name">Autopsy — Disk Analysis</span><div class="sg-bar"><div class="sg-fill red" style="width:75%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">Velociraptor — Endpoint Hunting</span><div class="sg-bar"><div class="sg-fill red" style="width:65%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">Ghidra / IDA — Reverse Engineering</span><div class="sg-bar"><div class="sg-fill red" style="width:62%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">Memory &amp; Traffic Forensics</span><div class="sg-bar"><div class="sg-fill red" style="width:70%"></div></div></div>
+        </div>
+        <div class="skill-group">
+          <div class="sg-title">Programming &amp; DevOps</div>
+          <div class="sg-row"><span class="sg-name">Python</span><div class="sg-bar"><div class="sg-fill" style="width:88%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">C++ · Java · SQL · Bash</span><div class="sg-bar"><div class="sg-fill" style="width:68%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">x86 Assembly</span><div class="sg-bar"><div class="sg-fill" style="width:55%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">Docker · Kubernetes · Jenkins</span><div class="sg-bar"><div class="sg-fill" style="width:72%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">ISO/IEC 27001 · Risk Assessment</span><div class="sg-bar"><div class="sg-fill" style="width:60%"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ CERTIFICATIONS ══════════════════ -->
+<section id="certifications" class="sec">
+  <div class="sec-grid">
+    <div class="sec-side">
+      <div class="sec-side-top">
+        <div class="sec-num">05 — Certifications</div>
+        <div class="sec-heading">What<br>I've <em>earned</em></div>
+      </div>
+    </div>
+    <div class="sec-body">
+      <div class="cert-wrap">
+        <div class="cert-row">
+          <div>
+            <div class="cert-issuer badge-red" style="display:inline-block;padding:3px 10px;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase">Udemy</div>
+            <div class="cert-year">Malware Analysis</div>
+          </div>
+          <div>
+            <div class="cert-name">Reverse Engineering &amp; Malware Analysis (REMAC+)</div>
+            <p class="cert-desc">Reverse engineering using Ghidra and IDA Pro. Malware analysis, disassembly, and identifying security vulnerabilities in compiled programs. Hands-on with real malware samples.</p>
+          </div>
+        </div>
+        <div class="cert-row">
+          <div>
+            <div class="cert-issuer badge-amb" style="display:inline-block;padding:3px 10px;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase">Udemy</div>
+            <div class="cert-year">Programming</div>
+          </div>
+          <div>
+            <div class="cert-name">Python PCAP — Pass Certified Associate in Python Programming</div>
+            <p class="cert-desc">Comprehensive Python course covering scripting, debugging, and problem-solving. Proficiency in automation, tooling, and development workflows with VS Code.</p>
+          </div>
+        </div>
+        <div class="cert-row">
+          <div>
+            <div class="cert-issuer badge-blue" style="display:inline-block;padding:3px 10px;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase">Cisco</div>
+            <div class="cert-year">Linux &amp; Networking</div>
+          </div>
+          <div>
+            <div class="cert-name">NDG Linux Unhatched</div>
+            <p class="cert-desc">Hands-on Kali Linux experience — command-line operations, system administration, networking fundamentals, and core security tooling.</p>
+          </div>
+        </div>
+        <div class="cert-row">
+          <div>
+            <div class="cert-issuer badge-dim" style="display:inline-block;padding:3px 10px;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase">SkillFront</div>
+            <div class="cert-year">Governance</div>
+          </div>
+          <div>
+            <div class="cert-name">ISO/IEC 27001:2022 Information Security Associate™</div>
+            <p class="cert-desc">ISMS foundations aligned with ISO/IEC 27001:2022. Risk assessment methodology, security controls, and best practices for protecting organisational information assets.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ CONTACT ══════════════════ -->
+<section id="contact" class="sec">
+  <div class="sec-grid">
+    <div class="sec-side">
+      <div class="sec-side-top">
+        <div class="sec-num">06 — Contact</div>
+        <div class="sec-heading">Get<br>in <em>touch</em></div>
+      </div>
+    </div>
+    <div class="sec-body">
+      <div class="contact-layout">
+        <div class="contact-main">
+          <div class="contact-giant">Let's<br><em>work.</em></div>
+          <p class="contact-sub">Looking for opportunities in cybersecurity — network security, digital forensics, or AI-driven threat detection. Open to internships, graduate roles, and research collaborations.</p>
+          <a href="mailto:farwah.hamid21@gmail.com" class="btn btn-primary">Send an email →</a>
+        </div>
+        <div class="clinks">
+          <a href="mailto:farwah.hamid21@gmail.com" class="clink">
+            <div class="clink-box">@</div>
+            <div><div class="clink-lbl">Email</div><div class="clink-val">farwah.hamid21@gmail.com</div></div>
+            <span class="clink-arr">↗</span>
+          </a>
+          <a href="https://linkedin.com/in/farwah-hamid" target="_blank" class="clink">
+            <div class="clink-box">in</div>
+            <div><div class="clink-lbl">LinkedIn</div><div class="clink-val">linkedin.com/in/farwah-hamid</div></div>
+            <span class="clink-arr">↗</span>
+          </a>
+          <a href="https://github.com/farwah-h" target="_blank" class="clink">
+            <div class="clink-box">gh</div>
+            <div><div class="clink-lbl">GitHub</div><div class="clink-val">github.com/farwah-h</div></div>
+            <span class="clink-arr">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <span>© 2026 Farwah Hamid</span>
+  <span class="accent">Cybersecurity &amp; AI · Islamabad, PK</span>
+</footer>
+</body>
+</html>
