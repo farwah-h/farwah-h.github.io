@@ -126,14 +126,21 @@ nav {
   font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em;
   text-transform: uppercase; color: var(--slate);
   display: flex; align-items: center; gap: 10px; margin-bottom: 2rem;
+  flex-wrap: wrap;
 }
 .hero-role span { color: var(--muted); }
 
 .hero-bio {
   font-size: 15px; color: var(--txt2); line-height: 1.85;
-  max-width: 520px; margin-bottom: 3rem;
+  max-width: 520px; margin-bottom: 1.5rem;
   border-left: 2px solid var(--blue2); padding-left: 1.25rem;
 }
+
+.hero-phone {
+  font-family: var(--mono); font-size: 11px; color: var(--txt3);
+  letter-spacing: 0.06em; margin-bottom: 1.5rem;
+}
+.hero-phone span { color: var(--blue); }
 
 .hero-btns { display: flex; gap: 10px; flex-wrap: wrap; }
 .btn {
@@ -289,6 +296,8 @@ nav {
 .sg-fill { height: 100%; background: var(--blue2); }
 .sg-fill.amb { background: #c8a040; }
 .sg-fill.red { background: #d06070; }
+.sg-fill.grn { background: #4fae7a; }
+.sg-fill.pur { background: #9a7fe0; }
 
 /* ─────────────────── CERTIFICATIONS ─────────────────── */
 .cert-wrap { display: flex; flex-direction: column; gap: 0; }
@@ -391,19 +400,20 @@ footer .accent { color: var(--blue); }
 <section id="hero">
   <div class="hero-left">
     <div>
-      <div class="hero-index">Islamabad, PK — BS Cyber Security, 2022–Present</div>
+      <div class="hero-index">Islamabad, PK — BS Cyber Security, 2022–2026</div>
       <h1 class="hero-name">
         <span class="dim">FAR</span><span class="hi">WAH</span><br>
         <span class="dim">HA</span>MID
       </h1>
       <div class="hero-role">
-        Cybersecurity &amp; AI <span>/</span> Network Security <span>/</span> Adversarial ML
+        Cybersecurity &amp; AI <span>/</span> Security Operations <span>/</span> Threat Intelligence <span>/</span> Digital Forensics
       </div>
     </div>
     <div>
       <p class="hero-bio">
-        Final-year cybersecurity student building at the edge of security and AI — from low-level network forensics and malware analysis to training neural networks that resist adversarial attacks. My FYP merges computer vision with threat modeling.
+        Final-year cybersecurity graduate building at the edge of security operations and AI — from SOC monitoring and threat intelligence to network forensics, malware analysis, and training neural networks that resist adversarial attacks. My FYP merges computer vision with threat modeling.
       </p>
+      <div class="hero-phone">Phone <span>+92 313 0508649</span></div>
       <div class="hero-btns">
         <a href="#projects" class="btn btn-primary">View projects →</a>
         <a href="https://github.com/farwah-h" target="_blank" class="btn btn-ghost">GitHub ↗</a>
@@ -415,7 +425,7 @@ footer .accent { color: var(--blue); }
   <div class="hero-right">
     <div class="stat-panel">
       <div class="sp-label">CGPA</div>
-      <div class="sp-val accent">3.55</div>
+      <div class="sp-val accent">3.57</div>
       <div class="sp-sub">Bachelor of Science in Cyber Security</div>
     </div>
     <div class="stat-panel">
@@ -426,6 +436,7 @@ footer .accent { color: var(--blue); }
     <div class="stat-panel">
       <div class="sp-label">Focus areas</div>
       <div class="sp-tags">
+        <span class="sp-tag lit">SOC &amp; Threat Intel</span>
         <span class="sp-tag lit">Network Security</span>
         <span class="sp-tag lit">Adversarial AI</span>
         <span class="sp-tag lit">Digital Forensics</span>
@@ -442,6 +453,7 @@ footer .accent { color: var(--blue); }
         <a href="https://github.com/farwah-h" target="_blank" style="font-family:var(--mono);font-size:11px;color:var(--slate2);text-decoration:none;display:flex;justify-content:space-between;align-items:center">github.com/farwah-h <span style="color:var(--blue)">↗</span></a>
         <a href="https://linkedin.com/in/farwah-hamid" target="_blank" style="font-family:var(--mono);font-size:11px;color:var(--slate2);text-decoration:none;display:flex;justify-content:space-between;align-items:center">linkedin.com/in/farwah-hamid <span style="color:var(--blue)">↗</span></a>
         <a href="mailto:farwah.hamid21@gmail.com" style="font-family:var(--mono);font-size:11px;color:var(--slate2);text-decoration:none;display:flex;justify-content:space-between;align-items:center">farwah.hamid21@gmail.com <span style="color:var(--blue)">↗</span></a>
+        <a href="tel:+923130508649" style="font-family:var(--mono);font-size:11px;color:var(--slate2);text-decoration:none;display:flex;justify-content:space-between;align-items:center">+92 313 0508649 <span style="color:var(--blue)">↗</span></a>
       </div>
     </div>
   </div>
@@ -454,26 +466,26 @@ footer .accent { color: var(--blue); }
       <div class="sec-side-top">
         <div class="sec-num">01 — About</div>
         <div class="sec-heading">Who<br>I <em>am</em></div>
-        <div class="sec-note">COMSATS University<br>Islamabad · 2022–Present</div>
+        <div class="sec-note">COMSATS University<br>Islamabad · 2022–2026</div>
       </div>
     </div>
     <div class="sec-body">
       <div class="about-layout">
         <div class="about-text">
-          <p>I'm a final-year Cybersecurity student at COMSATS University Islamabad, building across both the offensive and defensive sides of security. My work ranges from low-level assembly programming and network packet forensics to training deep neural networks against adversarial inputs.</p>
-          <p>At NECOP's Information Security Lab I performed authorised penetration testing on real enterprise infrastructure — identifying misconfigurations in routers and switches, running service enumeration, and deploying a pfSense firewall from scratch under real conditions.</p>
-          <p>My final year project, PhantomNet++, sits at an unusual intersection: using explainable AI and CNNs to simulate and detect physical adversarial attacks on vision models. It's the kind of problem that matters more as AI gets embedded in security-critical systems.</p>
-          <p>I like working where things don't usually connect — security and ML, low-level systems and high-level reasoning, offense and defense.</p>
+          <p>I'm a Cybersecurity graduate of COMSATS University Islamabad, building across both the offensive and defensive sides of security. My work ranges from SOC monitoring, alert triage, and threat intelligence to low-level assembly programming, network packet forensics, and training deep neural networks against adversarial inputs.</p>
+          <p>At NECOP's Information Security Lab I performed authorised security assessments on real enterprise infrastructure — identifying misconfigurations and hardening gaps in routers and switches, running reconnaissance and service enumeration for attack surface analysis, and documenting findings in configuration-validation reports aligned with organisational security requirements.</p>
+          <p>My final year project, PhantomNet++, sits at an unusual intersection: simulating physical adversarial attacks against computer vision models, applying explainable AI to surface model decision logic and detect anomalous behaviour, and documenting findings in threat-report format to harden deep learning pipelines.</p>
+          <p>I like working where things don't usually connect — SOC operations and ML, low-level systems and high-level reasoning, offense and defense.</p>
         </div>
         <div class="about-facts">
           <div class="fact">
             <div class="fact-label">Degree</div>
             <div class="fact-val">BS Cyber Security</div>
-            <div class="fact-sub">COMSATS · 2022–Present</div>
+            <div class="fact-sub">COMSATS · 2022–2026</div>
           </div>
           <div class="fact">
             <div class="fact-label">CGPA</div>
-            <div class="fact-val blue">3.55 / 4.0</div>
+            <div class="fact-val blue">3.57 / 4.0</div>
           </div>
           <div class="fact">
             <div class="fact-label">Prior education</div>
@@ -485,6 +497,10 @@ footer .accent { color: var(--blue); }
           <div class="fact">
             <div class="fact-label">Location</div>
             <div class="fact-val">Islamabad, Pakistan</div>
+          </div>
+          <div class="fact">
+            <div class="fact-label">Phone</div>
+            <div class="fact-val" style="font-size:.95rem">+92 313 0508649</div>
           </div>
         </div>
       </div>
@@ -508,12 +524,12 @@ footer .accent { color: var(--blue); }
           <div class="exp-where">National Electronics<br>Complex of Pakistan<br>(NECOP)</div>
         </div>
         <div>
-          <div class="exp-role">Network Security Intern — Information Security Lab</div>
+          <div class="exp-role">Cyber Security Intern</div>
           <ul class="exp-pts">
-            <li>Performed authorised penetration testing on enterprise network devices — routers and switches — identifying real misconfigurations and security weaknesses.</li>
-            <li>Conducted network reconnaissance and service enumeration to map device exposure and attack surfaces in controlled environments.</li>
-            <li>Configured and deployed a pfSense firewall, implementing rules and network security policies from scratch.</li>
-            <li>Documented findings and validated device configurations against security requirements.</li>
+            <li>Performed authorised security assessments of routers and switches to identify misconfigurations, hardening gaps, and security weaknesses.</li>
+            <li>Conducted network reconnaissance and service enumeration to support attack surface analysis and defensive security validation.</li>
+            <li>Investigated security findings, documented indicators of risk, and prepared configuration-validation reports aligned with organizational security requirements.</li>
+            <li>Assisted in the development, testing, and verification of security controls for network infrastructure within controlled environments.</li>
           </ul>
         </div>
       </div>
@@ -538,13 +554,14 @@ footer .accent { color: var(--blue); }
         <div class="proj-hero-body">
           <div class="proj-idx">01 · Featured · Final Year Project</div>
           <span class="proj-badge badge-red">Adversarial AI</span>
-          <div class="proj-title"><em>PhantomNet++</em><br>Adversarial Attack Detection &amp; Defense</div>
-          <p class="proj-desc">Framework to simulate and detect physical adversarial attacks on computer vision models. Trained DNNs and CNNs on manipulated inputs, applied explainable AI to visualise model vulnerabilities, and worked on hardening decisions against real-world perturbations — where cybersecurity meets ML.</p>
+          <div class="proj-title"><em>PhantomNet++</em><br>AI Security &amp; Threat Detection</div>
+          <p class="proj-desc">Simulated physical adversarial attacks against computer vision models to understand attack vectors and evasion techniques. Applied explainable AI (XAI) to surface model decision logic and detect anomalous model behaviour, documenting findings in threat-report format to contribute to hardening of deep learning pipelines — where cybersecurity meets ML.</p>
           <div class="proj-stack" style="margin-bottom:1.5rem">
             <span class="stk">PyTorch</span><span class="stk">CNNs / DNNs</span>
             <span class="stk">Adversarial ML</span><span class="stk">XAI</span>
             <span class="stk">Computer Vision</span><span class="stk">Python</span>
           </div>
+          <a href="https://github.com/farwah-h/PhantomNet" target="_blank" class="proj-link">github ↗</a>
         </div>
         <div class="proj-hero-meta">
           <div>
@@ -579,9 +596,9 @@ footer .accent { color: var(--blue); }
         </div>
         <div class="proj-card">
           <div class="pc-num">03</div>
-          <span class="proj-badge badge-blue">Network Security</span>
+          <span class="proj-badge badge-blue">Network Forensics</span>
           <div class="pc-title">Intelligent Packet Analysis Tool</div>
-          <p class="pc-desc">Analyses pcap files, reconstructs conversations, detects ARP spoofing, DDoS, SQL injection, and port scanning threats in real traffic.</p>
+          <p class="pc-desc">Reconstructs full network sessions from pcap files and detects ARP spoofing, DDoS patterns, SQL injection payloads, and port scanning. Custom detection signatures per attack type with structured alerts for triage.</p>
           <div class="pc-tags"><span class="pc-tag">Python</span><span class="pc-tag">Wireshark</span><span class="pc-tag">PCAP</span></div>
           <a href="https://github.com/farwah-h/Packet-Analysis-Tool" target="_blank" class="proj-link">github ↗</a>
         </div>
@@ -589,15 +606,15 @@ footer .accent { color: var(--blue); }
           <div class="pc-num">04</div>
           <span class="proj-badge badge-red">DevSecOps</span>
           <div class="pc-title">ML-Based Network Malware Detection</div>
-          <p class="pc-desc">Random Forest classifier on network traffic, packaged in Docker with a 3-stage Jenkins CI/CD pipeline and Docker Hub integration.</p>
+          <p class="pc-desc">Random Forest classifier trained on labeled network traffic. Containerized in Docker with a 3-stage Jenkins CI/CD pipeline; alert artifacts archived as build outputs for audit trail.</p>
           <div class="pc-tags"><span class="pc-tag">Random Forest</span><span class="pc-tag">Docker</span><span class="pc-tag">Jenkins</span></div>
-          <a href="https://github.com/farwah-h/ML-Based-Network-Malware-Detection-System" target="_blank" class="proj-link">github ↗</a>
+          <a href="https://github.com/farwah-h/ML-Based-Network-Malware-Detection" target="_blank" class="proj-link">github ↗</a>
         </div>
         <div class="proj-card">
           <div class="pc-num">05</div>
           <span class="proj-badge badge-blue">Digital Forensics</span>
-          <div class="pc-title">Windows &amp; Kali Linux Forensics</div>
-          <p class="pc-desc">Full forensic investigation of disk images, memory, and network traffic using Autopsy, Wireshark, and Velociraptor.</p>
+          <div class="pc-title">Forensics of Windows &amp; Kali Linux</div>
+          <p class="pc-desc">Full forensic investigation of disk images, volatile memory, network captures, and malware artifacts using Autopsy, Wireshark, and Velociraptor — reconstructing attack timelines and chain of custody.</p>
           <div class="pc-tags"><span class="pc-tag">Autopsy</span><span class="pc-tag">Velociraptor</span><span class="pc-tag">Wireshark</span></div>
           <a href="https://github.com/farwah-h/Digital-Forensics" target="_blank" class="proj-link">github ↗</a>
         </div>
@@ -643,35 +660,47 @@ footer .accent { color: var(--blue); }
     <div class="sec-body">
       <div class="skills-outer">
         <div class="skill-group">
+          <div class="sg-title">SOC &amp; Security Operations</div>
+          <div class="sg-row"><span class="sg-name">Security Monitoring &amp; Log Analysis</span><div class="sg-bar"><div class="sg-fill grn" style="width:78%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">SIEM Concepts — QRadar / Splunk</span><div class="sg-bar"><div class="sg-fill grn" style="width:70%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">Alert Triage &amp; Incident Response</span><div class="sg-bar"><div class="sg-fill grn" style="width:72%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">Threat Hunting &amp; Vulnerability Assessment</span><div class="sg-bar"><div class="sg-fill grn" style="width:68%"></div></div></div>
+        </div>
+        <div class="skill-group">
+          <div class="sg-title">Threat Intelligence</div>
+          <div class="sg-row"><span class="sg-name">CTI Lifecycle &amp; Governance</span><div class="sg-bar"><div class="sg-fill pur" style="width:72%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">MITRE ATT&amp;CK</span><div class="sg-bar"><div class="sg-fill pur" style="width:68%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">Adversary Analysis</span><div class="sg-bar"><div class="sg-fill pur" style="width:65%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">IOC / TTP Mapping</span><div class="sg-bar"><div class="sg-fill pur" style="width:66%"></div></div></div>
+        </div>
+        <div class="skill-group">
           <div class="sg-title">Network Security</div>
           <div class="sg-row"><span class="sg-name">Nmap — Recon &amp; Enumeration</span><div class="sg-bar"><div class="sg-fill" style="width:85%"></div></div></div>
           <div class="sg-row"><span class="sg-name">Wireshark — Packet Analysis</span><div class="sg-bar"><div class="sg-fill" style="width:82%"></div></div></div>
           <div class="sg-row"><span class="sg-name">pfSense — Firewall Config</span><div class="sg-bar"><div class="sg-fill" style="width:75%"></div></div></div>
-          <div class="sg-row"><span class="sg-name">Burp Suite / OWASP</span><div class="sg-bar"><div class="sg-fill" style="width:65%"></div></div></div>
-          <div class="sg-row"><span class="sg-name">Metasploit — Exploitation</span><div class="sg-bar"><div class="sg-fill" style="width:60%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">TCP/IP &amp; pcap Analysis</span><div class="sg-bar"><div class="sg-fill" style="width:78%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">ARP / DDoS / Port Scan Detection</span><div class="sg-bar"><div class="sg-fill" style="width:74%"></div></div></div>
         </div>
         <div class="skill-group">
           <div class="sg-title">AI &amp; Machine Learning</div>
           <div class="sg-row"><span class="sg-name">Deep Learning (CNNs, DNNs, Autoencoders)</span><div class="sg-bar"><div class="sg-fill amb" style="width:80%"></div></div></div>
-          <div class="sg-row"><span class="sg-name">Computer Vision &amp; Image Processing</span><div class="sg-bar"><div class="sg-fill amb" style="width:75%"></div></div></div>
-          <div class="sg-row"><span class="sg-name">Adversarial AI &amp; XAI</span><div class="sg-bar"><div class="sg-fill amb" style="width:72%"></div></div></div>
-          <div class="sg-row"><span class="sg-name">Supervised / Unsupervised Learning</span><div class="sg-bar"><div class="sg-fill amb" style="width:78%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">Anomaly Detection &amp; ML Threat Classification</span><div class="sg-bar"><div class="sg-fill amb" style="width:75%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">Adversarial Attack Modeling &amp; XAI</span><div class="sg-bar"><div class="sg-fill amb" style="width:72%"></div></div></div>
           <div class="sg-row"><span class="sg-name">PyTorch · VGG16 · Scikit-learn</span><div class="sg-bar"><div class="sg-fill amb" style="width:70%"></div></div></div>
         </div>
         <div class="skill-group">
-          <div class="sg-title">Digital Forensics &amp; Malware</div>
-          <div class="sg-row"><span class="sg-name">Autopsy — Disk Analysis</span><div class="sg-bar"><div class="sg-fill red" style="width:75%"></div></div></div>
+          <div class="sg-title">Digital Forensics, IR &amp; Malware</div>
+          <div class="sg-row"><span class="sg-name">DFIR — Autopsy &amp; Disk Image Analysis</span><div class="sg-bar"><div class="sg-fill red" style="width:75%"></div></div></div>
           <div class="sg-row"><span class="sg-name">Velociraptor — Endpoint Hunting</span><div class="sg-bar"><div class="sg-fill red" style="width:65%"></div></div></div>
           <div class="sg-row"><span class="sg-name">Ghidra / IDA — Reverse Engineering</span><div class="sg-bar"><div class="sg-fill red" style="width:62%"></div></div></div>
-          <div class="sg-row"><span class="sg-name">Memory &amp; Traffic Forensics</span><div class="sg-bar"><div class="sg-fill red" style="width:70%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">Memory Forensics &amp; Root Cause Analysis</span><div class="sg-bar"><div class="sg-fill red" style="width:70%"></div></div></div>
         </div>
         <div class="skill-group">
-          <div class="sg-title">Programming &amp; DevOps</div>
+          <div class="sg-title">Programming, DevSecOps &amp; Governance</div>
           <div class="sg-row"><span class="sg-name">Python</span><div class="sg-bar"><div class="sg-fill" style="width:88%"></div></div></div>
-          <div class="sg-row"><span class="sg-name">C++ · Java · SQL · Bash</span><div class="sg-bar"><div class="sg-fill" style="width:68%"></div></div></div>
-          <div class="sg-row"><span class="sg-name">x86 Assembly</span><div class="sg-bar"><div class="sg-fill" style="width:55%"></div></div></div>
-          <div class="sg-row"><span class="sg-name">Docker · Kubernetes · Jenkins</span><div class="sg-bar"><div class="sg-fill" style="width:72%"></div></div></div>
-          <div class="sg-row"><span class="sg-name">ISO/IEC 27001 · Risk Assessment</span><div class="sg-bar"><div class="sg-fill" style="width:60%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">C++ · Java · SQL · x86 Assembly</span><div class="sg-bar"><div class="sg-fill" style="width:68%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">Docker · Jenkins CI/CD · Artifact Mgmt</span><div class="sg-bar"><div class="sg-fill" style="width:72%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">ISO/IEC 27001 · NIST CSF · Risk Assessment</span><div class="sg-bar"><div class="sg-fill" style="width:60%"></div></div></div>
         </div>
       </div>
     </div>
@@ -691,12 +720,42 @@ footer .accent { color: var(--blue); }
       <div class="cert-wrap">
         <div class="cert-row">
           <div>
+            <div class="cert-issuer badge-blue" style="display:inline-block;padding:3px 10px;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase">Google</div>
+            <div class="cert-year">Cybersecurity</div>
+          </div>
+          <div>
+            <div class="cert-name">Google Cybersecurity Professional Certificate</div>
+            <p class="cert-desc">Hands-on training in SIEM tools, IDS, network security, and Linux/SQL fundamentals. Applied Python for security task automation. Skilled in identifying, assessing, and mitigating cybersecurity risks and vulnerabilities.</p>
+          </div>
+        </div>
+        <div class="cert-row">
+          <div>
+            <div class="cert-issuer badge-amb" style="display:inline-block;padding:3px 10px;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase">Red Team Leaders</div>
+            <div class="cert-year">Threat Intelligence</div>
+          </div>
+          <div>
+            <div class="cert-name">Certified Threat Intelligence &amp; Governance Analyst (CTIGA)</div>
+            <p class="cert-desc">Professional certification covering the CTI lifecycle, adversary analysis, intelligence collection and processing, and CTI governance frameworks. Trained in threat hunting methodologies and structuring intelligence outputs for operational use.</p>
+          </div>
+        </div>
+        <div class="cert-row">
+          <div>
             <div class="cert-issuer badge-red" style="display:inline-block;padding:3px 10px;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase">Udemy</div>
             <div class="cert-year">Malware Analysis</div>
           </div>
           <div>
             <div class="cert-name">Reverse Engineering &amp; Malware Analysis (REMAC+)</div>
-            <p class="cert-desc">Reverse engineering using Ghidra and IDA Pro. Malware analysis, disassembly, and identifying security vulnerabilities in compiled programs. Hands-on with real malware samples.</p>
+            <p class="cert-desc">Hands-on training in reverse engineering using Ghidra and IDA; performed static and dynamic malware analysis including disassembly, behavioral observation, and IOC identification.</p>
+          </div>
+        </div>
+        <div class="cert-row">
+          <div>
+            <div class="cert-issuer badge-dim" style="display:inline-block;padding:3px 10px;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase">SkillFront</div>
+            <div class="cert-year">Governance</div>
+          </div>
+          <div>
+            <div class="cert-name">ISO/IEC 27001:2022 Information Security Associate™</div>
+            <p class="cert-desc">Foundational knowledge of ISMS risk assessment methodology, security controls, asset classification, and compliance frameworks aligned with ISO/IEC 27001:2022.</p>
           </div>
         </div>
         <div class="cert-row">
@@ -705,8 +764,8 @@ footer .accent { color: var(--blue); }
             <div class="cert-year">Programming</div>
           </div>
           <div>
-            <div class="cert-name">Python PCAP — Pass Certified Associate in Python Programming</div>
-            <p class="cert-desc">Comprehensive Python course covering scripting, debugging, and problem-solving. Proficiency in automation, tooling, and development workflows with VS Code.</p>
+            <div class="cert-name">Python PCAP — Certified Associate in Python Programming</div>
+            <p class="cert-desc">Proficient in Python scripting for security automation, log parsing, and tool development, with comprehensive coverage of debugging and problem-solving workflows in VS Code.</p>
           </div>
         </div>
         <div class="cert-row">
@@ -717,16 +776,6 @@ footer .accent { color: var(--blue); }
           <div>
             <div class="cert-name">NDG Linux Unhatched</div>
             <p class="cert-desc">Hands-on Kali Linux experience — command-line operations, system administration, networking fundamentals, and core security tooling.</p>
-          </div>
-        </div>
-        <div class="cert-row">
-          <div>
-            <div class="cert-issuer badge-dim" style="display:inline-block;padding:3px 10px;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase">SkillFront</div>
-            <div class="cert-year">Governance</div>
-          </div>
-          <div>
-            <div class="cert-name">ISO/IEC 27001:2022 Information Security Associate™</div>
-            <p class="cert-desc">ISMS foundations aligned with ISO/IEC 27001:2022. Risk assessment methodology, security controls, and best practices for protecting organisational information assets.</p>
           </div>
         </div>
       </div>
@@ -747,13 +796,18 @@ footer .accent { color: var(--blue); }
       <div class="contact-layout">
         <div class="contact-main">
           <div class="contact-giant">Let's<br><em>work.</em></div>
-          <p class="contact-sub">Looking for opportunities in cybersecurity — network security, digital forensics, or AI-driven threat detection. Open to internships, graduate roles, and research collaborations.</p>
+          <p class="contact-sub">Looking for opportunities in cybersecurity — security operations, threat intelligence, network security, digital forensics, or AI-driven threat detection. Open to internships, graduate roles, and research collaborations.</p>
           <a href="mailto:farwah.hamid21@gmail.com" class="btn btn-primary">Send an email →</a>
         </div>
         <div class="clinks">
           <a href="mailto:farwah.hamid21@gmail.com" class="clink">
             <div class="clink-box">@</div>
             <div><div class="clink-lbl">Email</div><div class="clink-val">farwah.hamid21@gmail.com</div></div>
+            <span class="clink-arr">↗</span>
+          </a>
+          <a href="tel:+923130508649" class="clink">
+            <div class="clink-box">#</div>
+            <div><div class="clink-lbl">Phone</div><div class="clink-val">+92 313 0508649</div></div>
             <span class="clink-arr">↗</span>
           </a>
           <a href="https://linkedin.com/in/farwah-hamid" target="_blank" class="clink">
