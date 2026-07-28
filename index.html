@@ -136,12 +136,6 @@ nav {
   border-left: 2px solid var(--blue2); padding-left: 1.25rem;
 }
 
-.hero-phone {
-  font-family: var(--mono); font-size: 11px; color: var(--txt3);
-  letter-spacing: 0.06em; margin-bottom: 1.5rem;
-}
-.hero-phone span { color: var(--blue); }
-
 .hero-btns { display: flex; gap: 10px; flex-wrap: wrap; }
 .btn {
   font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em;
@@ -154,7 +148,7 @@ nav {
 .btn-ghost { background: transparent; color: var(--slate2); border: 1px solid var(--line2); }
 .btn-ghost:hover { border-color: var(--blue); color: var(--blue); }
 
-/* hero right — stat panels */
+/* hero right: stat panels */
 .hero-right {
   display: flex; flex-direction: column;
 }
@@ -226,14 +220,14 @@ nav {
 
 /* ─────────────────── PROJECTS ─────────────────── */
 
-/* FYP HERO CARD */
+/* FEATURED PROJECT HERO CARD */
 .proj-hero {
   display: grid; grid-template-columns: 1fr 280px;
   background: var(--bg1); border: 1px solid var(--line2);
   margin-bottom: 2px; position: relative; overflow: hidden;
 }
 .proj-hero::before {
-  content: 'FYP';
+  content: '01';
   position: absolute; right: -10px; top: -10px;
   font-family: var(--serif); font-size: 6rem; font-weight: 800;
   color: rgba(107,154,255,0.05); line-height: 1; pointer-events: none;
@@ -400,7 +394,7 @@ footer .accent { color: var(--blue); }
 <section id="hero">
   <div class="hero-left">
     <div>
-      <div class="hero-index">Islamabad, PK — BS Cyber Security, 2022–2026</div>
+      <div class="hero-index">Islamabad, PK · BS Cyber Security, 2022–2026</div>
       <h1 class="hero-name">
         <span class="dim">FAR</span><span class="hi">WAH</span><br>
         <span class="dim">HA</span>MID
@@ -411,9 +405,8 @@ footer .accent { color: var(--blue); }
     </div>
     <div>
       <p class="hero-bio">
-        Final-year cybersecurity graduate building at the edge of security operations and AI — from SOC monitoring and threat intelligence to network forensics, malware analysis, and training neural networks that resist adversarial attacks. My FYP merges computer vision with threat modeling.
+        I'm a Cybersecurity graduate who works across security operations and AI. My interests span SOC monitoring and threat intelligence, network forensics, malware analysis, and training neural networks to resist adversarial attacks. My final year project brought computer vision and threat modeling together.
       </p>
-      <div class="hero-phone">Phone <span>+92 313 0508649</span></div>
       <div class="hero-btns">
         <a href="#projects" class="btn btn-primary">View projects →</a>
         <a href="https://github.com/farwah-h" target="_blank" class="btn btn-ghost">GitHub ↗</a>
@@ -453,7 +446,6 @@ footer .accent { color: var(--blue); }
         <a href="https://github.com/farwah-h" target="_blank" style="font-family:var(--mono);font-size:11px;color:var(--slate2);text-decoration:none;display:flex;justify-content:space-between;align-items:center">github.com/farwah-h <span style="color:var(--blue)">↗</span></a>
         <a href="https://linkedin.com/in/farwah-hamid" target="_blank" style="font-family:var(--mono);font-size:11px;color:var(--slate2);text-decoration:none;display:flex;justify-content:space-between;align-items:center">linkedin.com/in/farwah-hamid <span style="color:var(--blue)">↗</span></a>
         <a href="mailto:farwah.hamid21@gmail.com" style="font-family:var(--mono);font-size:11px;color:var(--slate2);text-decoration:none;display:flex;justify-content:space-between;align-items:center">farwah.hamid21@gmail.com <span style="color:var(--blue)">↗</span></a>
-        <a href="tel:+923130508649" style="font-family:var(--mono);font-size:11px;color:var(--slate2);text-decoration:none;display:flex;justify-content:space-between;align-items:center">+92 313 0508649 <span style="color:var(--blue)">↗</span></a>
       </div>
     </div>
   </div>
@@ -464,7 +456,7 @@ footer .accent { color: var(--blue); }
   <div class="sec-grid">
     <div class="sec-side">
       <div class="sec-side-top">
-        <div class="sec-num">01 — About</div>
+        <div class="sec-num">01 · About</div>
         <div class="sec-heading">Who<br>I <em>am</em></div>
         <div class="sec-note">COMSATS University<br>Islamabad · 2022–2026</div>
       </div>
@@ -472,10 +464,10 @@ footer .accent { color: var(--blue); }
     <div class="sec-body">
       <div class="about-layout">
         <div class="about-text">
-          <p>I'm a Cybersecurity graduate of COMSATS University Islamabad, building across both the offensive and defensive sides of security. My work ranges from SOC monitoring, alert triage, and threat intelligence to low-level assembly programming, network packet forensics, and training deep neural networks against adversarial inputs.</p>
-          <p>At NECOP's Information Security Lab I performed authorised security assessments on real enterprise infrastructure — identifying misconfigurations and hardening gaps in routers and switches, running reconnaissance and service enumeration for attack surface analysis, and documenting findings in configuration-validation reports aligned with organisational security requirements.</p>
-          <p>My final year project, PhantomNet++, sits at an unusual intersection: simulating physical adversarial attacks against computer vision models, applying explainable AI to surface model decision logic and detect anomalous behaviour, and documenting findings in threat-report format to harden deep learning pipelines.</p>
-          <p>I like working where things don't usually connect — SOC operations and ML, low-level systems and high-level reasoning, offense and defense.</p>
+          <p>I graduated with a BS in Cyber Security from COMSATS University Islamabad, and I've spent my degree working on both the offensive and defensive sides of security. That's meant everything from SOC monitoring, alert triage, and threat intelligence to low-level assembly programming, network packet forensics, and training deep neural networks against adversarial inputs.</p>
+          <p>During my internship at NECOP's Information Security Lab, I performed authorised security assessments on real enterprise infrastructure. I identified misconfigurations and hardening gaps in routers and switches, ran reconnaissance and service enumeration for attack surface analysis, and documented my findings in configuration-validation reports aligned with the organisation's security requirements.</p>
+          <p>My final year project, PhantomNet++, simulated physical adversarial attacks against computer vision models and used explainable AI to surface model decision logic and flag anomalous behaviour. I wrote up the findings in threat-report format, aimed at helping harden deep learning pipelines against these kinds of attacks.</p>
+          <p>I like working where things don't usually connect: SOC operations and ML, low-level systems and high-level reasoning, offense and defense.</p>
         </div>
         <div class="about-facts">
           <div class="fact">
@@ -498,10 +490,6 @@ footer .accent { color: var(--blue); }
             <div class="fact-label">Location</div>
             <div class="fact-val">Islamabad, Pakistan</div>
           </div>
-          <div class="fact">
-            <div class="fact-label">Phone</div>
-            <div class="fact-val" style="font-size:.95rem">+92 313 0508649</div>
-          </div>
         </div>
       </div>
     </div>
@@ -513,7 +501,7 @@ footer .accent { color: var(--blue); }
   <div class="sec-grid">
     <div class="sec-side">
       <div class="sec-side-top">
-        <div class="sec-num">02 — Experience</div>
+        <div class="sec-num">02 · Experience</div>
         <div class="sec-heading">Where<br>I've <em>worked</em></div>
       </div>
     </div>
@@ -542,20 +530,20 @@ footer .accent { color: var(--blue); }
   <div class="sec-grid">
     <div class="sec-side">
       <div class="sec-side-top">
-        <div class="sec-num">03 — Projects</div>
+        <div class="sec-num">03 · Projects</div>
         <div class="sec-heading">Things<br>I've <em>built</em></div>
         <div class="sec-note">8 projects across<br>security, AI &amp; systems</div>
       </div>
     </div>
     <div class="sec-body" style="padding:0">
 
-      <!-- FYP HERO -->
+      <!-- FEATURED PROJECT -->
       <div class="proj-hero">
         <div class="proj-hero-body">
-          <div class="proj-idx">01 · Featured · Final Year Project</div>
+          <div class="proj-idx">01 · Featured project</div>
           <span class="proj-badge badge-red">Adversarial AI</span>
           <div class="proj-title"><em>PhantomNet++</em><br>AI Security &amp; Threat Detection</div>
-          <p class="proj-desc">Simulated physical adversarial attacks against computer vision models to understand attack vectors and evasion techniques. Applied explainable AI (XAI) to surface model decision logic and detect anomalous model behaviour, documenting findings in threat-report format to contribute to hardening of deep learning pipelines — where cybersecurity meets ML.</p>
+          <p class="proj-desc">I simulated physical adversarial attacks against computer vision models to understand how they can be fooled, then used explainable AI to surface the model's decision logic and flag anomalous behaviour. The findings are written up in threat-report format, aimed at helping harden deep learning pipelines against these attacks. It's where cybersecurity meets ML.</p>
           <div class="proj-stack" style="margin-bottom:1.5rem">
             <span class="stk">PyTorch</span><span class="stk">CNNs / DNNs</span>
             <span class="stk">Adversarial ML</span><span class="stk">XAI</span>
@@ -566,8 +554,7 @@ footer .accent { color: var(--blue); }
         <div class="proj-hero-meta">
           <div>
             <div class="meta-label">Type</div>
-            <div class="meta-val">FYP</div>
-            <div class="meta-sub">Final Year Project</div>
+            <div class="meta-val" style="font-size:1.1rem">Final year project</div>
           </div>
           <div>
             <div class="meta-label">Domain bridge</div>
@@ -579,7 +566,7 @@ footer .accent { color: var(--blue); }
           </div>
           <div>
             <div class="meta-label">Why it matters</div>
-            <p style="font-size:12px;color:var(--txt3);line-height:1.7">As AI gets deployed in security-critical contexts, adversarial robustness becomes a defense problem — not just an ML one.</p>
+            <p style="font-size:12px;color:var(--txt3);line-height:1.7">As AI gets deployed in security-critical contexts, adversarial robustness stops being just an ML problem and becomes a defense problem too.</p>
           </div>
         </div>
       </div>
@@ -614,14 +601,14 @@ footer .accent { color: var(--blue); }
           <div class="pc-num">05</div>
           <span class="proj-badge badge-blue">Digital Forensics</span>
           <div class="pc-title">Forensics of Windows &amp; Kali Linux</div>
-          <p class="pc-desc">Full forensic investigation of disk images, volatile memory, network captures, and malware artifacts using Autopsy, Wireshark, and Velociraptor — reconstructing attack timelines and chain of custody.</p>
+          <p class="pc-desc">Full forensic investigation of disk images, volatile memory, network captures, and malware artifacts using Autopsy, Wireshark, and Velociraptor, reconstructing attack timelines and chain of custody.</p>
           <div class="pc-tags"><span class="pc-tag">Autopsy</span><span class="pc-tag">Velociraptor</span><span class="pc-tag">Wireshark</span></div>
           <a href="https://github.com/farwah-h/Digital-Forensics" target="_blank" class="proj-link">github ↗</a>
         </div>
         <div class="proj-card">
           <div class="pc-num">06</div>
           <span class="proj-badge badge-amb">DevOps</span>
-          <div class="pc-title">Flask CI/CD — Unit &amp; Selenium Testing</div>
+          <div class="pc-title">Flask CI/CD: Unit &amp; Selenium Testing</div>
           <p class="pc-desc">Flask + MySQL app with five-stage Jenkins pipeline: lint → build → pytest → deploy → Selenium end-to-end tests in headless Chrome.</p>
           <div class="pc-tags"><span class="pc-tag">Flask</span><span class="pc-tag">Jenkins</span><span class="pc-tag">Selenium</span></div>
           <a href="https://github.com/farwah-h/CI-CD-Pipeline-with-Unit-Selenium-Testing" target="_blank" class="proj-link">github ↗</a>
@@ -630,7 +617,7 @@ footer .accent { color: var(--blue); }
           <div class="pc-num">07</div>
           <span class="proj-badge badge-amb">DevOps · K8s</span>
           <div class="pc-title">Flask App with Kubernetes Deployment</div>
-          <p class="pc-desc">Jenkins auto-deploys to Minikube with full K8s manifests — Deployments, NodePort, PVCs, ConfigMaps, and health probes.</p>
+          <p class="pc-desc">Jenkins auto-deploys to Minikube with full K8s manifests, including Deployments, NodePort, PVCs, ConfigMaps, and health probes.</p>
           <div class="pc-tags"><span class="pc-tag">Kubernetes</span><span class="pc-tag">Minikube</span><span class="pc-tag">Docker</span></div>
           <a href="https://github.com/farwah-h/DevOps-Final-Flask-CICD" target="_blank" class="proj-link">github ↗</a>
         </div>
@@ -638,7 +625,7 @@ footer .accent { color: var(--blue); }
           <div class="pc-num">08</div>
           <span class="proj-badge badge-dim">Low-Level Systems</span>
           <div class="pc-title">OS Shell in x86 Assembly</div>
-          <p class="pc-desc">Custom CLI shell in x86 Assembly — input handling, command parsing, execution via direct system calls and memory management.</p>
+          <p class="pc-desc">Custom CLI shell in x86 Assembly, handling input, command parsing, and execution through direct system calls and manual memory management.</p>
           <div class="pc-tags"><span class="pc-tag">x86 Assembly</span><span class="pc-tag">OS Internals</span><span class="pc-tag">Syscalls</span></div>
           <a href="https://github.com/farwah-h/OSShell-assembly" target="_blank" class="proj-link">github ↗</a>
         </div>
@@ -653,7 +640,7 @@ footer .accent { color: var(--blue); }
   <div class="sec-grid">
     <div class="sec-side">
       <div class="sec-side-top">
-        <div class="sec-num">04 — Skills</div>
+        <div class="sec-num">04 · Skills</div>
         <div class="sec-heading">What<br>I <em>know</em></div>
       </div>
     </div>
@@ -662,7 +649,7 @@ footer .accent { color: var(--blue); }
         <div class="skill-group">
           <div class="sg-title">SOC &amp; Security Operations</div>
           <div class="sg-row"><span class="sg-name">Security Monitoring &amp; Log Analysis</span><div class="sg-bar"><div class="sg-fill grn" style="width:78%"></div></div></div>
-          <div class="sg-row"><span class="sg-name">SIEM Concepts — QRadar / Splunk</span><div class="sg-bar"><div class="sg-fill grn" style="width:70%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">SIEM Concepts (QRadar / Splunk)</span><div class="sg-bar"><div class="sg-fill grn" style="width:70%"></div></div></div>
           <div class="sg-row"><span class="sg-name">Alert Triage &amp; Incident Response</span><div class="sg-bar"><div class="sg-fill grn" style="width:72%"></div></div></div>
           <div class="sg-row"><span class="sg-name">Threat Hunting &amp; Vulnerability Assessment</span><div class="sg-bar"><div class="sg-fill grn" style="width:68%"></div></div></div>
         </div>
@@ -675,9 +662,9 @@ footer .accent { color: var(--blue); }
         </div>
         <div class="skill-group">
           <div class="sg-title">Network Security</div>
-          <div class="sg-row"><span class="sg-name">Nmap — Recon &amp; Enumeration</span><div class="sg-bar"><div class="sg-fill" style="width:85%"></div></div></div>
-          <div class="sg-row"><span class="sg-name">Wireshark — Packet Analysis</span><div class="sg-bar"><div class="sg-fill" style="width:82%"></div></div></div>
-          <div class="sg-row"><span class="sg-name">pfSense — Firewall Config</span><div class="sg-bar"><div class="sg-fill" style="width:75%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">Nmap (Recon &amp; Enumeration)</span><div class="sg-bar"><div class="sg-fill" style="width:85%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">Wireshark (Packet Analysis)</span><div class="sg-bar"><div class="sg-fill" style="width:82%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">pfSense (Firewall Config)</span><div class="sg-bar"><div class="sg-fill" style="width:75%"></div></div></div>
           <div class="sg-row"><span class="sg-name">TCP/IP &amp; pcap Analysis</span><div class="sg-bar"><div class="sg-fill" style="width:78%"></div></div></div>
           <div class="sg-row"><span class="sg-name">ARP / DDoS / Port Scan Detection</span><div class="sg-bar"><div class="sg-fill" style="width:74%"></div></div></div>
         </div>
@@ -690,9 +677,9 @@ footer .accent { color: var(--blue); }
         </div>
         <div class="skill-group">
           <div class="sg-title">Digital Forensics, IR &amp; Malware</div>
-          <div class="sg-row"><span class="sg-name">DFIR — Autopsy &amp; Disk Image Analysis</span><div class="sg-bar"><div class="sg-fill red" style="width:75%"></div></div></div>
-          <div class="sg-row"><span class="sg-name">Velociraptor — Endpoint Hunting</span><div class="sg-bar"><div class="sg-fill red" style="width:65%"></div></div></div>
-          <div class="sg-row"><span class="sg-name">Ghidra / IDA — Reverse Engineering</span><div class="sg-bar"><div class="sg-fill red" style="width:62%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">DFIR (Autopsy &amp; Disk Image Analysis)</span><div class="sg-bar"><div class="sg-fill red" style="width:75%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">Velociraptor (Endpoint Hunting)</span><div class="sg-bar"><div class="sg-fill red" style="width:65%"></div></div></div>
+          <div class="sg-row"><span class="sg-name">Ghidra / IDA (Reverse Engineering)</span><div class="sg-bar"><div class="sg-fill red" style="width:62%"></div></div></div>
           <div class="sg-row"><span class="sg-name">Memory Forensics &amp; Root Cause Analysis</span><div class="sg-bar"><div class="sg-fill red" style="width:70%"></div></div></div>
         </div>
         <div class="skill-group">
@@ -712,7 +699,7 @@ footer .accent { color: var(--blue); }
   <div class="sec-grid">
     <div class="sec-side">
       <div class="sec-side-top">
-        <div class="sec-num">05 — Certifications</div>
+        <div class="sec-num">05 · Certifications</div>
         <div class="sec-heading">What<br>I've <em>earned</em></div>
       </div>
     </div>
@@ -764,7 +751,7 @@ footer .accent { color: var(--blue); }
             <div class="cert-year">Programming</div>
           </div>
           <div>
-            <div class="cert-name">Python PCAP — Certified Associate in Python Programming</div>
+            <div class="cert-name">Python PCAP: Certified Associate in Python Programming</div>
             <p class="cert-desc">Proficient in Python scripting for security automation, log parsing, and tool development, with comprehensive coverage of debugging and problem-solving workflows in VS Code.</p>
           </div>
         </div>
@@ -775,7 +762,7 @@ footer .accent { color: var(--blue); }
           </div>
           <div>
             <div class="cert-name">NDG Linux Unhatched</div>
-            <p class="cert-desc">Hands-on Kali Linux experience — command-line operations, system administration, networking fundamentals, and core security tooling.</p>
+            <p class="cert-desc">Hands-on Kali Linux experience covering command-line operations, system administration, networking fundamentals, and core security tooling.</p>
           </div>
         </div>
       </div>
@@ -788,7 +775,7 @@ footer .accent { color: var(--blue); }
   <div class="sec-grid">
     <div class="sec-side">
       <div class="sec-side-top">
-        <div class="sec-num">06 — Contact</div>
+        <div class="sec-num">06 · Contact</div>
         <div class="sec-heading">Get<br>in <em>touch</em></div>
       </div>
     </div>
@@ -796,18 +783,13 @@ footer .accent { color: var(--blue); }
       <div class="contact-layout">
         <div class="contact-main">
           <div class="contact-giant">Let's<br><em>work.</em></div>
-          <p class="contact-sub">Looking for opportunities in cybersecurity — security operations, threat intelligence, network security, digital forensics, or AI-driven threat detection. Open to internships, graduate roles, and research collaborations.</p>
+          <p class="contact-sub">I'm looking for opportunities in cybersecurity, whether that's security operations, threat intelligence, network security, digital forensics, or AI-driven threat detection. Open to graduate roles and research collaborations.</p>
           <a href="mailto:farwah.hamid21@gmail.com" class="btn btn-primary">Send an email →</a>
         </div>
         <div class="clinks">
           <a href="mailto:farwah.hamid21@gmail.com" class="clink">
             <div class="clink-box">@</div>
             <div><div class="clink-lbl">Email</div><div class="clink-val">farwah.hamid21@gmail.com</div></div>
-            <span class="clink-arr">↗</span>
-          </a>
-          <a href="tel:+923130508649" class="clink">
-            <div class="clink-box">#</div>
-            <div><div class="clink-lbl">Phone</div><div class="clink-val">+92 313 0508649</div></div>
             <span class="clink-arr">↗</span>
           </a>
           <a href="https://linkedin.com/in/farwah-hamid" target="_blank" class="clink">
